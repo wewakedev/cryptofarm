@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--Code by Divinector (www.divinectorweb.com)-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cryptofarm- Enter Address</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">    
+
+</head>
+<body>
+    
+<div class="theme-layout">
+<section>
+<div class="block">
+<div class="container">
+<div class="row">
+<div class="col-md-8 column col-md-offset-2">
+<div class="logo-signup text-center">
+    <a class="" href="index.html"><b style="font-size: 30px; color: #5752d0;">Crypto</b><strong>Farms</strong></a>
+</div>
+<div class="checkout-page signup">
+<h4 class="subtitle">Start Mining</h4>
+    <form class="style3" action="dashboard.html" method="post" id="login_form">
+<input type="hidden" name="reffid" value="">
+<div class="row">
+<div class="col-md-12">
+<div class="field"><input type="text" placeholder="Your BTC Address" name="address" id="address"></div>
+</div>
+<div class="col-md-12">
+<button class="dark-btn" href="#" title="">Start Mining</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div id="particles-js"></div>
+<script type="32dff130a6f3556b5382c1d9-text/javascript" src="https://minebtc.io/assets/front/js/jquery-2.2.3.min.js"></script>
+
+<script type="32dff130a6f3556b5382c1d9-text/javascript" src="btcvalid.js"></script>
+<script src="https://minebtc.io/assets/front/js/jquery.validate.min.js" type="32dff130a6f3556b5382c1d9-text/javascript"></script>
+<script type="32dff130a6f3556b5382c1d9-text/javascript"> 
+            jQuery(document).ready(function($) {
+
+            	jQuery.validator.addMethod("validebtc", function(value, element){
+            		var validadd = WAValidator.validate(value, 'btc');
+            		if (validadd) {
+				        return true;
+				    } else {
+				        return false;
+				    };
+				}, "This is not valid BTC address");
+
+                $("#login_form").validate({
+                    rules: {
+                        address: {
+                            required: true,
+                            validebtc: true
+                        }
+                    },
+                    messages: {
+                        address: {
+                          required: "Please enter address",
+                        }
+                    },
+                    errorElement: "em",
+                    errorPlacement: function ( error, element ) {
+                        error.addClass( "help-block" );
+
+                        if ( element.prop( "type" ) === "checkbox" ) {
+                            error.insertAfter( element.parent( "label" ) );
+                        } else {
+                            error.insertAfter( element );
+                        }
+                    },
+                    highlight: function ( element, errorClass, validClass ) {
+                        $( element ).parents( ".padding-leftright-null" ).addClass( "has-error" ).removeClass( "has-success" );
+                    },
+                    unhighlight: function (element, errorClass, validClass) {
+                        $( element ).parents( ".padding-leftright-null" ).addClass( "has-success" ).removeClass( "has-error" );
+                    }
+                });
+            });
+        </script>
+<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="32dff130a6f3556b5382c1d9-|49" defer=""></script></body>
+<script src="particles.js"></script>
+<script src="app.js"></script>
+</html>
